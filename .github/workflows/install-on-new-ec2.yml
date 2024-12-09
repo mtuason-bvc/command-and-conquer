@@ -36,6 +36,6 @@ jobs:
             sudo apt install -y apache2
             sudo apt install -y git
             cd /var/www/html/
-            git clone https://github.com/mtuason-bvc/command-and-conquer
+            sudo git clone https://github.com/mtuason-bvc/command-and-conquer
             sudo systemctl start apache2
             sudo systemctl enable apache2
