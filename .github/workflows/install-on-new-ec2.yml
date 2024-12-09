@@ -22,9 +22,6 @@ jobs:
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
-          SCRIPT_AFTER: |
-            sudo systemctl stop apache2
-            sudo systemctl start apache2
           
 
       - name: Executing remote ssh commands using ssh key
@@ -38,5 +35,7 @@ jobs:
             sudo apt upgrade -y
             sudo apt install -y apache2
             sudo apt install -y git
+            cd /var/www/html/
+            git clone https://github.com/mtuason-bvc/command-and-conquer
             sudo systemctl start apache2
             sudo systemctl enable apache2
